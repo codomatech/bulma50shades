@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "dependencies": {
+    "bulma": "*",
+    "sass": "^1.59.3",
+    "simpler-color": "^1.0.1"
+  }
+}

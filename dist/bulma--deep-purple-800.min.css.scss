@@ -1,0 +1,15 @@
+// Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import "../node_modules/bulma/sass/utilities/functions";
+
+
+// Set the derived variables
+$primary: #4527A0;
+$danger: #BB2211;
+$success: #B3143D;
+$info: #615F68;
+$link: #6B5572;
+
+
+// Import the rest of Bulma
+@import "../node_modules/bulma/bulma";
