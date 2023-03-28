@@ -1,7 +1,7 @@
 {
   "name": "@codomatech/bulma50shades",
   "description": "50 (and more) shades of bulma.css. Pre-Configured bulma.css sheets ready to import in your project via CDN.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/codomatech/bulma50shades.git"
