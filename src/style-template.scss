@@ -5,12 +5,72 @@
 
 // Set the derived variables
 $primary: {{primary}};
-$secondary: {{secondary}};
+$primary-invert: {{onPrimary}};
 $danger: {{error}};
-$success: {{accent}};
-$info: {{neutral}};
-$link: {{secondary}};
-
+$danger-invert: {{onError}};
+$info: {{secondary}};
+//$link: {{secondary}};
+$white: {{background}};
+$light: {{background}};
+$black: {{scrim}};
+$dark: {{scrim}};
+$shadow: {{shadow}};
+//$success: {{surface}};
 
 // Import the rest of Bulma
 @import "../node_modules/bulma/bulma";
+
+// Add dark mode
+
+body {
+    background-color: $light;
+    color: $dark;
+}
+
+body.dark, body.dark span, body.dark label, body.dark strong, body.dark em {
+    background-color: $black-ter;
+    color: $light;
+}
+
+body.dark .subtitle,
+body.dark .title {
+    color: $light;
+}
+
+.footer {
+    background-color: $white-bis;
+}
+body.dark .footer {
+    background-color: $black-bis;
+}
+
+
+body.dark.dark-full .is-primary {
+    color: $primary;
+    background-color: $primary-invert;
+}
+
+body.dark.dark-full .is-info {
+    color: $info;
+    background-color: $info-invert;
+}
+
+body.dark.dark-full .is-link {
+    color: $link;
+    background-color: $link-invert;
+}
+
+body.dark.dark-full .is-danger {
+    color: $danger;
+    background-color: $danger-invert;
+}
+
+body.dark.dark-full .is-warning {
+    color: $warning;
+    background-color: $warning-invert;
+}
+
+body.dark.dark-full .is-success {
+    color: $success;
+    background-color: $success-invert;
+}
