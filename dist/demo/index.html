@@ -1,0 +1,352 @@
+<!--
+This is a copy of the showcase of open source csrhymes theme:
+http://www.csrhymes.com/bulma-clean-theme/showcase/
+
+For license and usage rights, please consult their main repository:
+https://github.com/chrisrhymes/bulma-clean-theme
+-->
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content=#ffffff>
+        <link rel="stylesheet" id="bulma-header" href="https://cdn.jsdelivr.net/npm/@codomatech/bulma50shades/dist/material--teal-500.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css" />
+        <link rel="shortcut icon" type="image/png"
+            href="/bulma-clean-theme/favicon.png"
+            />
+        <script defer src="https://unpkg.com/alpinejs@3.9.0/dist/cdn.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-social@1/bin/bulma-social.min.css">
+        <title>Showcase | Bulma Clean Theme</title>
+    </head>
+    <body>
+        <nav class="nav" id="theme-controls" style="height: 40px;">
+            <div class="level">
+                <div class="level-left"></div>
+                <div class="level-right">
+                    <label class="label level-item" title="Theme Color" style="height: 25px;margin-top: 7px;">
+                        <select class="select" id="theme-selector" onchange="update_theme()">
+
+                            <option>amber-200</option>
+                            <option>amber-500</option>
+                            <option>amber-800</option>
+                            <option>blue-200</option>
+                            <option>blue-500</option>
+                            <option>blue-800</option>
+                            <option>blue-grey-200</option>
+                            <option>blue-grey-500</option>
+                            <option>blue-grey-800</option>
+                            <option>brown-200</option>
+                            <option>brown-500</option>
+                            <option>brown-800</option>
+                            <option>cyan-200</option>
+                            <option>cyan-500</option>
+                            <option>cyan-800</option>
+                            <option>deep-orange-200</option>
+                            <option>deep-orange-500</option>
+                            <option>deep-orange-800</option>
+                            <option>deep-purple-200</option>
+                            <option>deep-purple-500</option>
+                            <option>deep-purple-800</option>
+                            <option>green-200</option>
+                            <option>green-500</option>
+                            <option>green-800</option>
+                            <option>grey-200</option>
+                            <option>grey-500</option>
+                            <option>grey-800</option>
+                            <option>indigo-200</option>
+                            <option>indigo-500</option>
+                            <option>indigo-800</option>
+                            <option>light-blue-200</option>
+                            <option>light-blue-500</option>
+                            <option>light-blue-800</option>
+                            <option>light-green-200</option>
+                            <option>light-green-500</option>
+                            <option>light-green-800</option>
+                            <option>lime-200</option>
+                            <option>lime-500</option>
+                            <option>lime-800</option>
+                            <option>orange-200</option>
+                            <option>orange-500</option>
+                            <option>orange-800</option>
+                            <option>pink-200</option>
+                            <option>pink-500</option>
+                            <option>pink-800</option>
+                            <option>purple-200</option>
+                            <option>purple-500</option>
+                            <option>purple-800</option>
+                            <option>red-200</option>
+                            <option>red-500</option>
+                            <option>red-800</option>
+                            <option>teal-200</option>
+                            <option selected>teal-500</option>
+                            <option>teal-800</option>
+                            <option>yellow-200</option>
+                            <option>yellow-500</option>
+                            <option>yellow-800</option>
+
+
+                        </select>
+                    </label>
+<!--                    <label class="label level-item">
+                        <strong>accent</strong> <br>
+                        <input class="" type="range" list="accents" id="theme-accent"  onchange="update_theme()" />
+                        <datalist id="accents">
+                            <option value="200">200</option>
+                            <option value="500">500</option>
+                            <option value="800">800</option>
+                        </datalist>
+                    </label>-->
+                    <label class="label switch-light switch-material level-item" style="margin-top: -5px;" title="Dark mode?">
+                        <input type="checkbox" id="theme-dark-mode" onchange="update_theme()">
+                        <!--<strong>dark?</strong>-->
+                        <span>
+                        <span>Off</span>
+                        <span>On</span>
+                        <a></a>
+                        </span>
+                    </label>
+
+    <!--                <label class="control label switch-light switch-material">
+                        <input type="checkbox" id="theme-dark-full-mode" onchange="update_theme()">
+                        <strong>
+                        fully dark?
+                        </strong>
+                        <span>
+                        <span>Off</span>
+                        <span>On</span>
+                        <a></a>
+                        </span>
+                    </label>-->
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar is-primary " x-data="{ openNav: false }">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="#" class="navbar-item">
+                    Bulma Clean Theme
+                    </a>
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu" :class="{ 'is-active': openNav }" x-on:click="openNav = !openNav">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div class="navbar-menu" id="navMenu" :class="{ 'is-active': openNav }">
+                    <div class="navbar-start">
+                        <a href="#" class="navbar-item ">Home</a>
+                        <a href="#" class="navbar-item ">Docs</a>
+                        <div class="navbar-item has-dropdown is-hoverable ">
+                            <a href="#" class="navbar-link ">Example Pages</a>
+                            <div class="navbar-dropdown">
+                                <a href="#" class="navbar-item ">Landing Page With Callouts</a>
+                                <a href="#" class="navbar-item ">Sponsors Page</a>
+                                <a href="#" class="navbar-item ">Image Gallery</a>
+                                <a href="#" class="navbar-item ">Products</a>
+                                <a href="#" class="navbar-item ">Recipe Page</a>
+                                <a href="#" class="navbar-item is-active">Showcase</a>
+                            </div>
+                        </div>
+                        <a href="#" class="navbar-item ">Blog</a>
+                    </div>
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="https://github.com/sponsors/chrisrhymes">
+                        <span class="icon gh-sponsor"><i class="fas fa-heart"></i></span>
+                        <span>Sponsor</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="hero  is-medium  is-bold is-primary" >
+            <div class="hero-body ">
+                <div class="container">
+                    <h1 class="title is-2">Showcase</h1>
+                    <p class="subtitle is-3">An example showcase page</p>
+                    <div class="buttons">
+                        <button class="button is-primary">Primary</button>
+                        <button class="button is-link">Link</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="button is-info">Info</button>
+                        <button class="button is-success">Success</button>
+                        <button class="button is-warning">Warning</button>
+                        <button class="button is-danger">Danger</button>
+                        <button class="button is-white">White</button>
+                        <button class="button is-light">Light</button>
+                        <button class="button is-dark">Dark</button>
+                        <button class="button is-black">Black</button>
+                        <button class="button is-text">Text</button>
+                        <button class="button is-ghost">Ghost</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="columns is-multiline">
+                    <div class="column is-12">
+                        <div class="content">
+                            <p>
+                            <p>This is an example showcase page to show you how you can use it to easily showcase your work.</p>
+                            <p><a href="/#">View the showcase docs</a></p>
+                            </p>
+                        </div>
+                        <section class="showcase">
+                            <figure class="image  is-16by9 ">
+                                <img
+                                    title="hero image, courtesy of pexels.com, https://www.pexels.com/photo/assorted-paintings-383568/"
+                                    alt="hero image, courtesy of pexels.com, https://www.pexels.com/photo/assorted-paintings-383568/"
+                                    src="img/hero.png" />
+                            </figure>
+                            <div class="showcase-content">
+                                <div class="columns is-centered">
+                                    <div class="column is-8-desktop is-12-tablet">
+                                        <p class="title">C.S. Rhymes Website</p>
+                                        <p class="subtitle">csrhymes.com</p>
+                                        <div class="buttons is-centered">
+                                            <a href="https://github.com/chrisrhymes/chrisrhymes.github.io/stargazers" class="button is-white is-small">
+                                            <img alt="GitHub stars" src="https://img.shields.io/github/stars/chrisrhymes/chrisrhymes.github.io?style=social">
+                                            </a>
+                                            <a href="https://github.com//network/members" class="button is-white is-small">
+                                            <img alt="GitHub forks" src="https://img.shields.io/github/forks/chrisrhymes/chrisrhymes.github.io?style=social">
+                                            </a>
+                                            <a href="https://github.com/chrisrhymes/chrisrhymes.github.io/watchers" class="button is-white is-small">
+                                            <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/chrisrhymes/chrisrhymes.github.io?style=social">
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <p>
+                                            <p>The C.S. Rhymes website is built using Bulma Clean Theme.</p>
+                                            <p>This website utilises the built in blog and products layouts that come included with the theme.</p>
+                                            </p>
+                                        </div>
+                                        <div class="tags is-centered">
+                                            <span class="tag  is-dark ">
+                                            Bulma
+                                            </span>
+                                            <span class="tag  is-dark ">
+                                            CSS
+                                            </span>
+                                            <span class="tag  is-dark ">
+                                            Jekyll
+                                            </span>
+                                        </div>
+                                        <a href="https://www.csrhymes.com" class="button is-primary">
+                                        View the CS Rhymes Website
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="showcase">
+                            <div class="showcase-content">
+                                <div class="columns is-centered">
+                                    <div class="column is-8-desktop is-12-tablet">
+                                        <p class="title is-1">Title 1</p>
+                                        <p class="subtitle is-3">Subtitle 3</p>
+                                        <p class="title is-2">Title 2</p>
+                                        <p class="subtitle is-4">Subtitle 4</p>
+                                        <p class="title is-3">Title 3</p>
+                                        <p class="subtitle is-5">Subtitle 5</p>
+                                        <div class="buttons is-centered">
+                                            <a href="https://github.com/chrisrhymes/bulma-clean-theme/stargazers" class="button is-white is-small">
+                                            <img alt="GitHub stars" src="https://img.shields.io/github/stars/chrisrhymes/bulma-clean-theme?style=social">
+                                            </a>
+                                            <a href="https://github.com//network/members" class="button is-white is-small">
+                                            <img alt="GitHub forks" src="https://img.shields.io/github/forks/chrisrhymes/bulma-clean-theme?style=social">
+                                            </a>
+                                            <a href="https://github.com/chrisrhymes/bulma-clean-theme/watchers" class="button is-white is-small">
+                                            <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/chrisrhymes/bulma-clean-theme?style=social">
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <p>
+                                            <p>A clean and simple Jekyll theme built with the Bulma framework, available as a Ruby Gem. You may recognise it, it’s what powers this website!</p>
+                                            <p>There is a wide variety of different page layout options available, along with the essential blog and post pages.</p>
+                                            </p>
+                                        </div>
+                                        <ul class="block-list is-centered is-outlined">
+                                            <li>Responsive</li>
+                                            <li>Page With Sidebar</li>
+                                            <li>Page With Menubar</li>
+                                            <li>Page With Tabs</li>
+                                            <li>Page Contents</li>
+                                            <li>Landing Page With Callouts</li>
+                                            <li>Blog and Posts</li>
+                                            <li>Showcases</li>
+                                        </ul>
+                                        <div class="tags is-centered">
+                                            <span class="tag  is-dark ">
+                                            Jekyll
+                                            </span>
+                                            <span class="tag  is-dark ">
+                                            Bulma
+                                            </span>
+                                            <span class="tag  is-dark ">
+                                            CSS
+                                            </span>
+                                        </div>
+                                        <a href="https://github.com/chrisrhymes/bulma-clean-theme" class="button is-primary">
+                                        View Theme
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <div class="content">
+                            <p><a href="#">View the showcase docs</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="container">
+                <div class="columns is-multiline">
+                    <div class="column has-text-centered">
+                        <div>
+                            <a href="#" class="link">Home</a>
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div>
+                            <a href="#" class="link">Blog</a>
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div>
+                            <a href="#" class="link">Products</a>
+                        </div>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div>
+                            <a href="#" class="link">Privacy Policy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="content is-small has-text-centered">
+                    <p class="">Theme built by <a href="https://www.csrhymes.com">C.S. Rhymes</a></p>
+                </div>
+            </div>
+        </footer>
+        <!-- footer scripts -->
+        <script defer>
+            function update_theme() {
+                var BASE = 'https://cdn.jsdelivr.net/npm/@codomatech/bulma50shades/dist/'
+                var is_dark = document.querySelector('#theme-dark-mode').checked
+                var t = document.getElementById('theme-selector').value
+                document.getElementById('bulma-header').href = BASE + 'material--' + t + '.min.css'
+
+                if (is_dark) {
+                    document.querySelector('body').classList.add('dark')
+                } else {
+                    document.querySelector('body').classList.remove('dark')
+                }
+            }
+        </script>
+    </body>
+</html>
